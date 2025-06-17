@@ -75,26 +75,28 @@ export default function DropdownCard({
         </div>
       </div>
       {showDropdown && (
-        <div className={`absolute ${cardPosition} p-4 w-full h-[320px] rounded-3xl border border-brown1 bg-white overflow-y-auto`}>
-          <div className="py-2 flex flex-col gap-y-6">
-            {Object.entries(Cities).map(([region, cityList]) => (
-              <div key={region} className="flex flex-col gap-y-2">
-                <span className="border-l-[3px] border-brown px-2 text-xl font-bold text-gray">{region}</span>
-                <div className="grid grid-cols-4 gap-2">
-                  {cityList.map((item) => (
-                    <div
-                      key={item}
-                      className={`cursor-pointer px-2 w-[64px] h-[26px] rounded-lg text-center flex items-center justify-center ${
-                        city === item ? "bg-brown1/20 text-brown" : " hover:text-brown"
-                      }`}
-                      onClick={() => {setCity(item);setShowDropdown(false)}}
-                    >
-                      {item}
-                    </div>
-                  ))}
+        <div className={`absolute ${cardPosition}  w-full  rounded-3xl border border-brown1 bg-white overflow-hidden `}>
+          <div className="p-4 overflow-y-auto custom-scrollbar h-[320px]">
+            <div className="py-2 flex flex-col gap-y-6">
+              {Object.entries(Cities).map(([region, cityList]) => (
+                <div key={region} className="flex flex-col gap-y-2">
+                  <span className="border-l-[3px] border-brown px-2 text-xl font-bold text-gray">{region}</span>
+                  <div className="grid grid-cols-4 gap-2">
+                    {cityList.map((item) => (
+                      <div
+                        key={item}
+                        className={`cursor-pointer px-2 w-[64px] h-[26px] rounded-lg text-center flex items-center justify-center ${
+                          city === item ? "bg-brown1/20 text-brown" : " hover:text-brown"
+                        }`}
+                        onClick={() => {setCity(item);setShowDropdown(false)}}
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       )}
