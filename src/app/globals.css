@@ -145,3 +145,23 @@ input[type="password"]::-ms-clear {
     @apply bg-background text-foreground;
   }
 }
+
+/* 自訂 scroll bar 樣式（Webkit） */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(180, 135, 90, 0.5); /* 自訂色 */
+  border-radius: 9999px;
+  border: 2px solid white;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(180, 135, 90, 0.8); /* hover 狀態 */
+}
